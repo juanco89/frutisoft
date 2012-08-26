@@ -1,0 +1,9 @@
+<div>
+    <?php
+        if(isset($this->dto)){
+            $this->form->getElement('id')->setValue($this->dto->id);
+            $this->form->getElement('nombre')->setValue($this->dto->nombre);
+        }
+        echo $this->form;
+    ?>
+</div>

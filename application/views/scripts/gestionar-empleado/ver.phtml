@@ -1,0 +1,17 @@
+<div>
+    <?php if(isset($this->empleado)): ?>
+        <h2>Datos detallados del empleado</h2>
+        <p>Identificación: <?php echo $this->empleado->identificacion; ?> </p>
+        <p>Nombre: <?php echo $this->empleado->nombre; ?> </p>
+        <p>Salario: <?php echo $this->empleado->salario; ?> </p>
+        <p>Email: <?php echo $this->empleado->email; ?> </p>
+        <p>Teléfono: <?php echo $this->empleado->telefono; ?> </p>
+        <p>Cargo: <?php echo $this->cargo->nombre; ?> </p>
+    <?php else: ?>
+        <br />
+        <p class="mensajeInformativo">No se encuentra el empleado requerido</p>
+    <?php endif; ?>
+    <br />
+    <a href="/gestionar-empleado/index">Volver a la lista</a>
+
+</div>

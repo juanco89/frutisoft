@@ -1,0 +1,37 @@
+<br />
+<div id="view-content">
+    <?php if(count($this->paginador)): ?>
+        <h2>Productos</h2>
+        <table class="tablaDatos">
+            <tr>
+                <td>Código</td>
+                <td>Producto</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <?php foreach( $this->paginador as $dto ): ?>
+                <tr>
+                    <td><?php echo $dto->id; ?></td>
+                    <td><?php echo $dto->nombre; ?></td>
+                    <td><a href="/gestionar-producto/modificar/id/<?php echo $dto->id; ?>">Modificar</a></td>
+                    <td><a href="/gestionar-producto/eliminar/id/<?php echo $dto->id; ?>" onclick="return confirmar();">Eliminar</a></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        <div class="paginador" >
+            <?php echo $this->paginador; ?>
+        </div>
+    <?php else:
+        echo "<p class='mensajeInformativo'> No hay datos para mostrar </p>";
+    endif; ?>
+    <div class="paginador" >
+        <a href="/gestionar-producto/nuevo" class="boton">Agregar producto</a>
+    </div>
+    <script type="text/javascript">
+    function confirmar()
+    {
+        return window.confirm ('¿Está seguro de eliminar el registro?');
+    }
+    </script>
+</div>

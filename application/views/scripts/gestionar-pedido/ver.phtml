@@ -1,0 +1,19 @@
+<div>
+    <?php if(isset($this->pedido)): ?>
+        <h2>Detalle de pedido</h2>
+        <p>Código: <?php echo $this->pedido->id; ?> </p>
+        <p>Cantidad: <?php echo $this->pedido->cantidad; ?> </p>
+        <p>Fecha Realizacion: <?php echo $this->pedido->fechaRealizacion; ?> </p>
+        <p>Fecha Esperada: <?php echo $this->pedido->fechaEsperada; ?> </p>
+        <p>Fecha Entrega: <?php echo $this->pedido->fechaEntrega; ?> </p>
+        <p>Estado: <?php echo $this->estado->nombre; ?> </p>
+        <p>Producto: <?php echo $this->producto->nombre; ?> </p>
+        <p>Finca: <?php echo $this->finca->nombre; ?> </p>
+    <?php else:?>
+        <br />
+        <p class="mensajeInformativo">No se encuentra el pedido requerido</p>
+    <?php endif; ?>
+    <br />
+    <a href="/gestionar-pedido/index">Volver a la lista</a>
+
+</div>

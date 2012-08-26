@@ -1,0 +1,58 @@
+<?php echo $this->doctype() ?>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Frutisoft:: <?php echo $this->placeholder('titulo') ?> </title>
+        <?php echo $this->jQuery(); ?>
+        <?php echo $this->headLink(); ?>
+    </head>
+
+    <body>
+        <!-- Plantilla principal -->
+
+        <!-- Header -->
+	<div id="header">
+            <div id="headerWraper">
+                <div>
+                    <ul id="menuItems">
+                        <li><a href="/index/">Inicio</a></li>
+                        <li><a href="/gestionar-pedido/index">Pedidos</a></li>
+                        <li><a href="/gestionar-producto/index">Productos</a></li>
+                        <li><a href="/gestionar-finca/index">Fincas</a></li>
+                        <li><a href="/gestionar-empleado/index">Empleados</a></li>
+                    </ul>                    
+                </div>
+            </div>
+	</div>
+
+	<div id="wraper">
+		<div id="content">
+			<?php echo $this->layout()->content; ?>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<div id="footer">
+            <div>
+                <div>
+                    <ul>
+                        <li>Frutisoft 2012</li>
+                        <li>Software empresarial</li>
+                        <li>Creado con Zend Framework</li>
+                    </ul>
+                    <ul>
+                        <li>Home</li>
+                        <li>Pedidos</li>
+                        <li>Planes de cultivo</li>
+                    </ul>
+                    <ul>
+                        <li>Acerca de los desarrolladores</li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+	</div>
+
+    </body>
+</html>

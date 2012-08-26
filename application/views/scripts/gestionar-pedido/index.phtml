@@ -1,0 +1,45 @@
+<br />
+<div id="view-content">
+    
+    <?php if(count($this->paginador)): ?>
+        <h2>Pedidos sin entregar</h2>
+        <table class="tablaDatos">
+            <tr>
+                <td>Código</td>
+                <td>Cantidad</td>
+                <td>Fecha realización</td>
+                <td>Fecha esperada de Entrega</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <?php foreach( $this->paginador as $pedidoDTO ): ?>
+                <tr>
+                    <td><?php echo $pedidoDTO->id; ?></td>
+                    <td><?php echo $pedidoDTO->cantidad; ?></td>
+                    <td><?php echo $pedidoDTO->fechaRealizacion; ?></td>
+                    <td><?php echo $pedidoDTO->fechaEsperada; ?></td>
+                    <td><a href="/gestionar-pedido/ver/id/<?php echo $pedidoDTO->id; ?>">Ver</a></td>
+                    <td><a href="/gestionar-pedido/modificar/id/<?php echo $pedidoDTO->id; ?>">Modificar</a></td>
+                    <td><a href="/gestionar-pedido/eliminar/id/<?php echo $pedidoDTO->id; ?>" onclick="return confirmar();">Eliminar</a></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        <div class="paginador" >
+            <?php echo $this->paginador; ?>
+        </div>
+    <?php else:
+        echo "<p class='mensajeInformativo'> No hay datos que mostrar </p>";
+    endif; ?>
+    <div class="paginador" >
+        <a href="/gestionar-pedido/nuevo" class="boton">Nuevo pedido</a>
+    </div>
+    <script type="text/javascript">
+    function confirmar()
+    {
+        return window.confirm ('¿Está seguro de eliminar el registro?');
+    }
+    </script>
+    
+</div>

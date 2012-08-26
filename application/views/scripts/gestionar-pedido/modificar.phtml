@@ -1,0 +1,16 @@
+<div>
+    <?php
+        if(isset($this->dto)){
+            $dateArray = Zend_Locale_Format::getDate($this->dto->fechaEsperada, array('date_format' => 'yyyy-MM-dd'));
+            $date  = date("d/m/Y", mktime(0, 0, 0,$dateArray['month'],$dateArray['day'],$dateArray['year']));
+            
+            $this->form->getElement('id')->setValue($this->dto->id);
+            $this->form->getElement('fechaRealizacion')->setValue($this->dto->fechaRealizacion);
+            $this->form->getElement('cantidad')->setValue( str_replace('.', ',', $this->dto->cantidad) );
+            $this->form->getElement('producto')->setValue($this->dto->producto);
+            $this->form->getElement('finca')->setValue($this->dto->finca);
+            $this->form->getElement('fechaEsperada')->setValue($date);
+        }
+        echo $this->form;
+    ?>
+</div>

@@ -1,0 +1,43 @@
+<br />
+<div id="view-content">
+    
+    <?php if(count($this->paginador)): ?>
+        <h2>Fincas registradas</h2>
+        <table class="tablaDatos">
+            <tr> 
+               <td>Código</td>
+                <td>Nombre</td>
+                <td>Ubicación</td>
+                <td>Teléfono</td>
+                <td>Número de hectáreas</td>
+                <td>Administrador</td>
+            </tr>
+
+            <?php foreach( $this->paginador as $dto ): ?>
+                <tr>
+                    <td><?php echo $dto->id; ?></td>
+                    <td><?php echo $dto->nombre; ?></td>
+                    <td><?php echo $dto->ubicacion; ?></td>
+                    <td><?php echo $dto->telefono; ?></td>
+                    <td><?php echo count($dto->hectareas); ?></td>
+                    <td><?php echo $dto->administrador ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        <div class="paginador" >
+            <?php echo $this->paginador; ?>
+        </div>
+    <?php else:
+        echo "<p class='mensajeInformativo'> No hay datos que mostrar </p>";
+    endif; ?>
+    <div class="paginador" >
+        <a href="/gestionar-finca/nueva" class="boton">Registrar nueva finca</a>
+    </div>
+    <script type="text/javascript">
+    function confirmar()
+    {
+        return window.confirm ('¿Está seguro de eliminar el registro?');
+    }
+    </script>
+
+</div>

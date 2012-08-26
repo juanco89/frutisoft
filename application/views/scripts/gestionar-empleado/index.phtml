@@ -1,0 +1,45 @@
+<br />
+<div id="view-content">
+    
+    <?php if(count($this->paginador)): ?>
+        <h2>Empleados</h2>
+        <table class="tablaDatos">
+            <tr>
+                <td>Identificación</td>
+                <td>Nombre</td>
+                <td>Email</td>
+                <td>Teléfono</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <?php foreach( $this->paginador as $dto ): ?>
+                <tr>
+                    <td><?php echo $dto->identificacion; ?></td>
+                    <td><?php echo $dto->nombre; ?></td>
+                    <td><?php echo $dto->email; ?></td>
+                    <td><?php echo $dto->telefono; ?></td>
+                    <td><a href="/gestionar-empleado/ver/id/<?php echo $dto->identificacion; ?>">Ver</a></td>
+                    <td><a href="/gestionar-empleado/modificar/id/<?php echo $dto->identificacion; ?>">Modificar</a></td>
+                    <td><a href="/gestionar-empleado/eliminar/id/<?php echo $dto->identificacion; ?>" onclick="return confirmar();">Eliminar</a></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        <div class="paginador" >
+            <?php echo $this->paginador; ?>
+        </div>
+    <?php else:
+        echo "<p class='mensajeInformativo'> No hay datos que mostrar </p>";
+    endif; ?>
+    <div class="paginador" >
+        <a href="/gestionar-empleado/nuevo" class="boton">Nuevo empleado</a>
+    </div>
+    <script type="text/javascript">
+    function confirmar()
+    {
+        return window.confirm ('¿Está seguro de eliminar el registro?');
+    }
+    </script>
+    
+</div>
