@@ -1,0 +1,20 @@
+##Logs
+*.log
+
+## Metadatos de eclipse
+.project
+.buildpath
+.settings
+
+##Metadatos de Netbeans
+nbproject
+
+##Respaldo de linux
+*~
+
+##Librerías de Zend
+library/Zend
+library/ZendX
+
+## Archivos raros de win2
+Thumbs.db
