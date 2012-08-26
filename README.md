@@ -1,4 +1,4 @@
-Frutisfot
+Frutisoft
 =========
 
 Frutisoft es un proyecto web creado para el curso de arqutectura de software. Está contruido en PHP usando _Zend Framework_. Es una aplicación web que busca mantener una clara separación entre las 3 capas básicas MVC y con esto ser fácilmente modificable.
