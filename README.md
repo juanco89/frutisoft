@@ -7,9 +7,10 @@ Frutisoft es un proyecto web creado para el curso de arqutectura de software. Es
 
 La razón para seguir con el desarrollo de esta aplicación más que llegar a construir una aplicación funcional es aprender las nuevas tecnologías web, es decir, **Frutisoft es un campo de pruebas en el cual experimentar y aprender**.
 
+******************************************************************
 
-> ### Desarrolladores:
+### _Desarrolladores_:
 > + Luz Cosmos Osorno
 > + Juan Carlos Orozco
 
-> 2012
+2012
