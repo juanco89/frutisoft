@@ -194,8 +194,7 @@ CREATE TABLE IF NOT EXISTS `FINCAS` (
   `ubicacion` varchar(255) NOT NULL,
   `telefono` varchar(255) DEFAULT NULL,
   `identificacion` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `FINCA__IDX` (`identificacion`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
